@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "system-design-library": {
+      "projectType": "library",
+      "root": "projects/system-design-library",
+      "sourceRoot": "projects/system-design-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/system-design-library/tsconfig.lib.json",
+            "project": "projects/system-design-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/system-design-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/system-design-library/src/test.ts",
+            "tsConfig": "projects/system-design-library/tsconfig.spec.json",
+            "karmaConfig": "projects/system-design-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/system-design-library/tsconfig.lib.json",
+              "projects/system-design-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "system-design-library"
 }

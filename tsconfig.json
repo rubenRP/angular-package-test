@@ -12,6 +12,12 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "paths": {
+      "system-design-library": [
+        "dist/system-design-library/system-design-library",
+        "dist/system-design-library"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"
